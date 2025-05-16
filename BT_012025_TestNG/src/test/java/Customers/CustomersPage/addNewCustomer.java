@@ -149,16 +149,12 @@ public class addNewCustomer extends BaseTest {
         String numberActiveCustomerAfterAdd = driver.findElement(By.xpath(Customers.activeCustomers)).getText();
         Assert.assertEquals(expect_ActiveCustomersAfterAdd, Integer.parseInt(numberActiveCustomerAfterAdd));
     }
-//    @Test(priority = 6,description = "Verify corrected data in table after add new customer", dependsOnMethods = "checkAddNewCustomerSuccess")
-//    public static void checkDataCustomerTable() throws InterruptedException{
-//        driver.findElement(By.xpath(inputSearch)).sendKeys("long");
-//        List<WebElement> listCompany = driver.findElements(By.xpath(Customers.listCompany));
-//        for(int i = 0;i<listCompany.size();i++){
-//            if(listCompany.get(i).getText().equals(company)){
-//                Assert.assertTrue(listCompany.get(i).isDisplayed());
-//                break;
-//            }
-//        }
-//    }
+    @Test(priority = 6,description = "Verify corrected data in table after add new customer", dependsOnMethods = "checkAddNewCustomerSuccess")
+    public static void checkDataCustomerTable() throws InterruptedException{
+        driver.findElement(By.xpath(inputSearch)).sendKeys(company);
+        Thread.sleep(1000);
+        String checkDataCustomerTable = driver.findElement(By.xpath(Customers.listCompany)).getText();
+        Assert.assertEquals(checkDataCustomerTable,company);
+    }
 
 }
