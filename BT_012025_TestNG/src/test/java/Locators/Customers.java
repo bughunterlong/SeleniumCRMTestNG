@@ -92,6 +92,7 @@ public class Customers {
 
     // Xpath for message addCustomer success
     public static String alertAddCustomerSuccess = "//span[text()='Customer added successfully.']";
+    public static String alertDeleteCustomerSuccess = "//span[text()='Customer deleted']";
 
     // Xpath for number of Total Customers, Active Customers, Inactive Customers, Active Contacts, Inactive Contacts
     public static String totalCustomers = "//span[text()='Total Customers']/preceding-sibling::span";
@@ -103,6 +104,7 @@ public class Customers {
     // Xpath for list Company in table
     public static String listCompany = "//table[@id='clients']//th[@id='th-company']/following::tr/td[3]/a";
     public static String listbuttonContactCompany ="//th[@id='th-company']/following::tr/td[3]/div/a[2]";
+    public static String listbuttonDeleteCompany = "//th[@id='th-company']/following::tr/td[3]/div/a[3]";
 
     // Xpath for toggleInactiveCustomer
     public static String listToggleInactiveCustomer = "//th[contains(@aria-label,'Active')]/following::td/div[@class='onoffswitch']";

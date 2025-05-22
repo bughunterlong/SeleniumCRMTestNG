@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -99,8 +100,10 @@ public class addNewCustomer extends BaseTest {
         Thread.sleep(1000);
         String alertAddCustomerSuccess = driver.findElement(By.xpath(Customers.alertAddCustomerSuccess)).getText();
         boolean checkaAlertAddCustomerSuccess = driver.findElement(By.xpath(Customers.alertAddCustomerSuccess)).isDisplayed();
-        Assert.assertEquals(alertAddCustomerSuccess, "Customer added successfully.");
-        Assert.assertTrue(checkaAlertAddCustomerSuccess);
+        SoftAssert softassert = new SoftAssert();
+        softassert.assertEquals(alertAddCustomerSuccess, "Customer added successfully.");
+        softassert.assertTrue(checkaAlertAddCustomerSuccess);
+        softassert.assertAll();
     }
 
     @Test(priority = 3,description = "Verify corrected data at Customer Datails after add new customer", dependsOnMethods = "checkAddNewCustomerSuccess")
