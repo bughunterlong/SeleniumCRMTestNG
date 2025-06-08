@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CRM Regression Test" verbose="1">
+    <test name="Customers Regression">
+        <classes>
+            <class name="Customers.CustomersPage.checkLabel"/>
+            <class name="Customers.CustomersPage.addNewCustomer"></class>
+            <class name="Customers.CustomersPage.inActiveCustomer"></class>
+            <class name="Customers.CustomersPage.deleteCustomer"></class>
+        </classes>
+    </test>
+</suite>
